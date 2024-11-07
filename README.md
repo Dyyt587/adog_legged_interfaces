@@ -1,7 +1,7 @@
 adog_legged_interfaces
 ==========================================
 
-this
+This is a msg package that contains adog legged robot
 
 ![Licence](https://img.shields.io/badge/License-Apache-2.0-blue.svg)
 
@@ -25,17 +25,20 @@ If you end up with missing dependencies, install them using commands from [Setup
 
 # How to use this Package and ROS Introduction
 
- - [Workflow With Docker](#workflow-with-docker)
-   * [Quick Start Using ROS with Docker (RosTeamWorkspace)](#quick-start-using-ros-with-docker-rosteamworkspace)
- - [Install and Build](#install-and-build)
-   * [Install ROS Humble and Development Tooling](#install-ros-humble-and-development-tooling)
-   * [Setup ROS Workspace](#setup-ros-workspace)
-   * [Configure and Build Workspace](#configure-and-build-workspace)
- - [Running Executables](#running-executables)
-   * [Using the Local Workspace](#using-the-local-workspace)
- - [Testing and Linting](#testing-and-linting)
- - [Creating a new ROS 2 Package](#creating-a-new-ros2-package)
- - [References](#references)
+- [adog\_legged\_interfaces](#adog_legged_interfaces)
+- [Quick Start Instructions](#quick-start-instructions)
+- [How to use this Package and ROS Introduction](#how-to-use-this-package-and-ros-introduction)
+  - [Workflow With Docker](#workflow-with-docker)
+    - [Quick Start Using ROS with Docker (ros\_team\_workspace)](#quick-start-using-ros-with-docker-ros_team_workspace)
+  - [Install and Build](#install-and-build)
+    - [Install ROS Humble and Development Tooling](#install-ros-humble-and-development-tooling)
+    - [Setup ROS Workspace](#setup-ros-workspace)
+    - [Configure and Build Workspace:](#configure-and-build-workspace)
+  - [Running Executable](#running-executable)
+    - [Using the Local Workspace](#using-the-local-workspace)
+      - [Notes on Sourcing ROS Workspace](#notes-on-sourcing-ros-workspace)
+  - [~~Testing and Linting~~ (This package do not support to this yet)](#testing-and-linting-this-package-do-not-support-to-this-yet)
+  - [References](#references)
 
 ## Workflow With [Docker](https://docs.docker.com/)
 
@@ -157,7 +160,7 @@ Sourcing the local_setup of the overlay will only add the packages available in 
 So, sourcing your main ROS 2 installation’s setup and then the dev_ws overlay’s local_setup, like you just did, is the same as just sourcing dev_ws’s setup, because that includes the environment of the underlay it was created in.
 
 
-## Testing and Linting
+## ~~Testing and Linting~~ (This package do not support to this yet)
 
 To test the packages packages built from source, use the following command with [colcon](https://colcon.readthedocs.io/en/released/).
 In order to run tests and linters you will have had to already built the workspace.
@@ -170,14 +173,6 @@ To run the tests use following commands:
 
 There are `--mixin` arguments that can be used to control testing with linters, specifically `linters-only` and `linters-skip`.
 
-## Creating a new ROS 2 Package
-
-If you need to create a new ROS 2 package it is helpful to start with the official boilerplate for a ROS 2 package.
-The command `ros2 pkg` can be used to generate the boilerplate details.
-For example to create a new ROS 2 package called `example_package` with a node called `example_node` and library called `example_library` use this command:
-  ```
-  ros2 pkg create --build-type ament_cmake --node-name example_node --library-name example_library example_package
-  ```
 
 ## References
 
